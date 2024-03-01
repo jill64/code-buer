@@ -115,6 +115,7 @@ The summary should be output in the following JSON format with appropriate headi
     owner,
     repo,
     title: 'Consciousness',
-    body: content
+    body: content,
+    labels: ['dashboard']
   })
 }
