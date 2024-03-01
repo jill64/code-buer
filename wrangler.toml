@@ -1,0 +1,11 @@
+name = "code-buer"
+main = "src/index.ts"
+account_id = "824d8f80ef73b60f8cc6bac2b679f599"
+compatibility_date = "2024-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+
+OCTOFLARE_APP_ID = "846053"
+OCTOFLARE_APP_OWNER = "jill64"
+OCTOFLARE_APP_REPO = "code-buer"

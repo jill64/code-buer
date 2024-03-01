@@ -1,0 +1,11 @@
+name: Code Buer
+description: GitHub Action for Code Buer
+
+inputs:
+  payload:
+    description: Octoflare Payload
+    required: true
+
+runs:
+  using: node20
+  main: action/dist/index.cjs

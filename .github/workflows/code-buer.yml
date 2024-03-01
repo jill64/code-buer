@@ -1,0 +1,54 @@
+name: Code Buer
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        required: true
+env:
+  GH_TOKEN: ${{ fromJson(inputs.payload).token }}
+  repository: ${{ fromJson(inputs.payload).owner }}/${{ fromJson(inputs.payload).repo }}
+
+jobs:
+  code-buer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        with:
+          token: ${{ env.GH_TOKEN }}
+          repository: ${{ env.repository }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        with:
+          node-version: 20
+
+      - name: Code Buer
+        uses: jill64/code-buer@main
+        with:
+          payload: ${{ inputs.payload }}
+
+  on-error:
+    needs: code-buer
+    if: failure()
+    runs-on: ubuntu-latest
+    env:
+      check_run_id: ${{ fromJson(inputs.payload).data.check_run_id }}
+    steps:
+      - name: Close Check Run
+        if: env.check_run_id
+        run: |
+          gh api \
+            --method PATCH \
+            /repos/${{ env.repository }}/check-runs/${{ env.check_run_id }} \
+            --field status=completed \
+            --field conclusion=failure
+
+      - name: Revoke Installation Token
+        run: gh api --method DELETE /installation/token
+
+      - name: Revoke App Token
+        run: gh api --method DELETE /installation/token
+        env:
+          GH_TOKEN: ${{ fromJson(inputs.payload).app_token }}
