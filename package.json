@@ -19,7 +19,7 @@
     "js-tiktoken": "1.0.10",
     "octoflare": "0.24.27",
     "openai": "4.32.1",
-    "path-minifier": "1.0.14",
+    "path-minifier": "1.0.15",
     "ts-retry": "4.2.5",
     "typescanner": "0.5.3",
     "typescript": "5.4.4",
