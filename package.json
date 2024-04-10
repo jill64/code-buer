@@ -22,7 +22,7 @@
     "path-minifier": "1.0.16",
     "ts-retry": "4.2.5",
     "typescanner": "0.5.3",
-    "typescript": "5.4.4",
+    "typescript": "5.4.5",
     "vitest": "1.4.0"
   }
 }
