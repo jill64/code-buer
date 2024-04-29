@@ -62,10 +62,10 @@ export const conversation = async (
       },
       {
         maxTry: 3,
-        delay: 120000,
+        delay: 10000,
         onError(err) {
           console.log('Error on sending messages', err.message)
-          console.log('Retrying... after 2 minutes')
+          console.log('Retrying... after 10 seconds')
         }
       }
     )
