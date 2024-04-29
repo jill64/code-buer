@@ -74,7 +74,7 @@ The summary should be output in the following JSON format.
 \`\`\`json
 {
   type: "summary",
-  updated_summary: 'Updated project summary described as markdown format'
+  updated_summary: '# Updated project summary described as markdown format'
 }
 \`\`\`
 `
