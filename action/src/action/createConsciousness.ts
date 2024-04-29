@@ -53,18 +53,23 @@ Please observe the following rules when creating it.
 - Please do not request the same file more than once.
 \`\`\`
 
+Example of a file request:
+\`\`\`json
+["src/index.js", "README.md"]
+\`\`\`
+
 The following is a list of project files.
 
 \`\`\`
 ${file_list}
 \`\`\`
 ${wip_summary(past)}
-Once the summary has been created, output its contents according to the following JSON format.Once you have created a summary, output its contents according to the JSON format below. 
+Once a summary has been created with sufficient information, output its contents according to the JSON format below.
 The summary should be output in the following JSON format with appropriate headings, links, lists, citations, etc. in markdown format.
 \`\`\`json
 {
   type: 'summary',
-  content: 'Project summary described as markdown format'
+  content: '# Project summary described as markdown format'
 }
 \`\`\`
 `
