@@ -51,6 +51,11 @@ Please observe the following rules when creating it.
 - Please do not request the same file more than once.
 \`\`\`
 
+Example of a file request:
+\`\`\`json
+["src/index.js", "README.md"]
+\`\`\`
+
 The commits are as follows
 
 \`\`\`
