@@ -28,6 +28,8 @@ jobs:
         uses: jill64/code-buer@main
         with:
           payload: ${{ inputs.payload }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
   on-error:
     needs: code-buer
