@@ -36,7 +36,10 @@ Please observe the following rules when creating it.
 
 Example of a file request:
 \`\`\`json
-["src/index.js", "README.md"]
+{
+  "type": "file_request",
+  "files": ["src/index.js", "README.md"]
+}
 \`\`\`
 
 The following is a list of project files.
@@ -49,14 +52,20 @@ Once a summary has been created with sufficient information, output its contents
 The summary should be output in the following JSON format with appropriate headings, links, lists, citations, etc. in markdown format.
 \`\`\`json
 {
-  type: 'summary',
-  content: '# Project summary described as markdown format'
+  "type": "summary",
+  "content": "# Project summary described as markdown format"
 }
 \`\`\`
 `
 
   const result = await conversation(intro, async (reply) => {
-    const list = pickJson(reply, array(string))
+    const list = pickJson(
+      reply,
+      scanner({
+        type: isList(['file_request']),
+        files: array(string)
+      })
+    )
 
     if (!list) {
       const response = pickJson(
@@ -74,7 +83,7 @@ The summary should be output in the following JSON format with appropriate headi
       return
     }
 
-    const files = await Promise.all(list.map(giveFileContents))
+    const files = await Promise.all(list.files.map(giveFileContents))
 
     return files.join('\n')
   })
