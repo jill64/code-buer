@@ -1,10 +1,10 @@
+import { attempt } from '@jill64/attempt'
+import { readFile } from 'node:fs/promises'
 import { array, list as isList, scanner, string } from 'typescanner'
 import { conversation } from '../buer/conversation.js'
+import { countToken } from '../util/countToken.js'
 import { makeFileTree } from '../util/makeFileTree.js'
 import { pickJson } from '../util/pickJson.js'
-import { readFile } from 'node:fs/promises'
-import { countToken } from '../util/countToken.js'
-import { attempt } from '@jill64/attempt'
 
 const giveFileContents = async (path: string) => {
   const str = await readFile(path, 'utf-8')
@@ -60,7 +60,7 @@ Once a sufficient number of issues have been extracted, output the list in markd
 \`\`\`json
 {
   "type": "summary",
-  "content": "# Describe project issues in markdown format"
+  "content": "# Detected Project Issues\n## Performance\n- Issue 1\n- Issue 2\n- Issue 3\n..."
 }
 \`\`\`
 `
