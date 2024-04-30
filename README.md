@@ -15,5 +15,3 @@
 🌱 The AI-Driven Development
 
 <!----- END GHOST DOCS HEADER ----->
-
-An experimental project that explores problems with the code and autonomously submits a revised PR.
