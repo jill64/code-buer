@@ -28,7 +28,7 @@ export default octoflare<ActionEvent>(async ({ payload, installation }) => {
   }
 
   if ('commits' in payload) {
-    const { ref, repository, before, commits, after, head_commit } = payload
+    const { ref, repository, commits, head_commit } = payload
 
     if (head_commit?.message.startsWith('chore:')) {
       return new Response('Skip Event: Trivial changes by PR', {
@@ -46,11 +46,8 @@ export default octoflare<ActionEvent>(async ({ payload, installation }) => {
       return await respond({
         repository,
         event: {
-          type: 'push',
-          commits,
-          before,
-          after
-        } as ActionEvent
+          type: 'push'
+        }
       })
     }
   }
