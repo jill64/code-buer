@@ -1,57 +1,38 @@
-import { ActionOctokit } from 'octoflare/action'
 import { array, list as isList, scanner, string } from 'typescanner'
 import { conversation } from '../buer/conversation.js'
-import { giveFileContents } from '../buer/prompts/giveFileContents.js'
-import { profile } from '../buer/prompts/profile.js'
 import { makeFileTree } from '../util/makeFileTree.js'
-import { pickJsonFromMd } from '../util/pickJsonFromMd.js'
+import { pickJson } from '../util/pickJson.js'
+import { readFile } from 'fs/promises'
 
-export const createConsciousness = async ({
-  octokit,
-  repo,
-  owner
-}: {
-  octokit: ActionOctokit
-  repo: string
-  owner: string
-}) => {
-  console.log('Creating Consciousness', `${owner}/${repo}`)
+const giveFileContents = async (path: string) => {
+  const str = await readFile(path, 'utf-8')
 
-  const file_list = await makeFileTree()
+  const ext = path.split('.').pop()
+  const name = path.split('/').pop()
 
-  const wip_summary = (past?: string) =>
-    past
-      ? `
-The following is a list of files and their contents that have already been verified by you.
-
-\`\`\`
-${past}
+  return `
+\`\`\`${ext}:${name}
+${str}
 \`\`\`
 `
-      : ''
+}
 
-  const intro = (past?: string) => `${profile}
-Prepare a high-level project summary that includes the following elements.
+export const generateSanctuaryContents = async () => {
+  const file_list = await makeFileTree()
 
-\`\`\`
-- Features
-- Architectures
-- Technologies
-- Languages
-- Libraries
-- Frameworks
-- Tools
-- etc...
-\`\`\`
+  const intro = `Find the problem with your project based on the following items
+
+- Performance
+- Reliability
+- Maintenance
+- Security
+- Documentation
 
 Please observe the following rules when creating it.
 
-\`\`\`
 - If you want to know the contents of the file, reply with the path to the file you need in the form of a JSON array.
 - Keep requesting the contents of the file until you have all the information you need.
-- When replying in the form of a JSON array with the path to the required file, please request the JSON object text in markdown code block format.
 - Please do not request the same file more than once.
-\`\`\`
 
 Example of a file request:
 \`\`\`json
@@ -63,7 +44,7 @@ The following is a list of project files.
 \`\`\`
 ${file_list}
 \`\`\`
-${wip_summary(past)}
+
 Once a summary has been created with sufficient information, output its contents according to the JSON format below.
 The summary should be output in the following JSON format with appropriate headings, links, lists, citations, etc. in markdown format.
 \`\`\`json
@@ -74,11 +55,11 @@ The summary should be output in the following JSON format with appropriate headi
 \`\`\`
 `
 
-  const result = await conversation(intro, async (reply, { max_token }) => {
-    const list = pickJsonFromMd(reply, array(string))
+  const result = await conversation(intro, async (reply) => {
+    const list = pickJson(reply, array(string))
 
     if (!list) {
-      const response = pickJsonFromMd(
+      const response = pickJson(
         reply,
         scanner({
           type: isList(['summary']),
@@ -93,8 +74,9 @@ The summary should be output in the following JSON format with appropriate headi
       return
     }
 
-    const response = list.map((path) => giveFileContents(path, max_token))
-    return await Promise.all(response)
+    const files = await Promise.all(list.map(giveFileContents))
+
+    return files.join('\n')
   })
 
   const last = result.pop()
@@ -104,7 +86,7 @@ The summary should be output in the following JSON format with appropriate headi
   }
 
   const { content } =
-    pickJsonFromMd(
+    pickJson(
       last.content,
       scanner({
         type: isList(['summary']),
@@ -116,11 +98,5 @@ The summary should be output in the following JSON format with appropriate headi
     throw new Error('No Summary')
   }
 
-  await octokit.rest.issues.create({
-    owner,
-    repo,
-    title: 'Consciousness',
-    body: content,
-    labels: ['dashboard']
-  })
+  return content
 }

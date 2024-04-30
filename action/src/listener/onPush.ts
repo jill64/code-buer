@@ -1,12 +1,9 @@
 import { ActionOctokit } from 'octoflare/action'
 import { PushActionEvent } from '../../../types/PushActionEvent.js'
-import { createConsciousness } from '../action/createConsciousness.js'
-import { updateConsciousness } from '../action/updateConsciousness.js'
-import { listMyIssues } from '../rest/listMyIssues.js'
+import { generateSanctuaryContents } from '../action/generateSanctuaryContents.js'
 
 export const onPush = async ({
   octokit,
-  event,
   repo,
   owner
 }: {
@@ -15,14 +12,31 @@ export const onPush = async ({
   repo: string
   owner: string
 }) => {
-  const list = await listMyIssues({ octokit, repo, owner })
+  const { data: list } = await octokit.rest.issues.listForRepo({
+    owner,
+    repo,
+    creator: 'code-buer[bot]'
+  })
 
-  const consciousness = list.find((issue) => issue.title === 'Consciousness')
+  const body = await generateSanctuaryContents()
 
-  if (!consciousness) {
-    await createConsciousness({ octokit, repo, owner })
+  const sanctuary = list.find((issue) => issue.title === 'Sanctuary')
+
+  if (!sanctuary) {
+    await octokit.rest.issues.create({
+      owner,
+      repo,
+      title: 'Sanctuary',
+      body,
+      labels: ['dashboard']
+    })
     return
   }
 
-  await updateConsciousness({ octokit, event, repo, owner, consciousness })
+  await octokit.rest.issues.update({
+    owner,
+    repo,
+    issue_number: sanctuary.number,
+    body
+  })
 }

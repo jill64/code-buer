@@ -1,5 +1,5 @@
 import { ActionOctokit } from 'octoflare/action'
-import { IssueActionEvent } from '../../../types/IssueActionEvent.js'
+import { IssueEditActionEvent } from '../../../types/IssueEditActionEvent.js'
 
 export const onIssue = async ({
   event,
@@ -7,11 +7,11 @@ export const onIssue = async ({
   owner
 }: {
   octokit: ActionOctokit
-  event: IssueActionEvent
+  event: IssueEditActionEvent
   repo: string
   owner: string
 }) => {
-  console.log('Issue Event', {
+  console.log('Issue Edit Event', {
     repo,
     owner,
     event

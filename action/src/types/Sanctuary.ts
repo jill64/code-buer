@@ -1,6 +1,6 @@
 import { ActionOctokit } from 'octoflare/action'
 
-export type Consciousness = Pick<
+export type Sanctuary = Pick<
   Awaited<
     ReturnType<ActionOctokit['rest']['issues']['listForRepo']>
   >['data'][number],
