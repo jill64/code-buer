@@ -1,4 +1,4 @@
-import { IssuesEditedEvent } from "octoflare/webhook"
+import { IssuesEditedEvent } from 'octoflare/webhook'
 
 export type IssueEditActionEvent = {
   type: 'issue'
