@@ -4,10 +4,11 @@ import { makeFileTree } from '../util/makeFileTree.js'
 import { pickJson } from '../util/pickJson.js'
 import { readFile } from 'node:fs/promises'
 import { countToken } from '../util/countToken.js'
+import { attempt } from '@jill64/attempt'
 
 const giveFileContents = async (path: string) => {
   const str = await readFile(path, 'utf-8')
-  const token = countToken(str)
+  const token = attempt(() => countToken(str), Infinity)
 
   const ext = path.split('.').pop()
   const name = path.split('/').pop()
