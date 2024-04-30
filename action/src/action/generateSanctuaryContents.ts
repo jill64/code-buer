@@ -56,12 +56,11 @@ The following is a list of project files.
 ${file_list}
 \`\`\`
 
-Once a summary has been created with sufficient information, output its contents according to the JSON format below.
-The summary should be output in the following JSON format with appropriate headings, links, lists, citations, etc. in markdown format.
+Once a sufficient number of issues have been extracted, output the list in markdown format according to the following JSON format.
 \`\`\`json
 {
   "type": "summary",
-  "content": "# Project summary described as markdown format"
+  "content": "# Describe project issues in markdown format"
 }
 \`\`\`
 `
