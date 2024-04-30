@@ -2,13 +2,20 @@ import { array, list as isList, scanner, string } from 'typescanner'
 import { conversation } from '../buer/conversation.js'
 import { makeFileTree } from '../util/makeFileTree.js'
 import { pickJson } from '../util/pickJson.js'
-import { readFile } from 'fs/promises'
+import { readFile } from 'node:fs/promises'
+import { countToken } from '../util/countToken.js'
 
 const giveFileContents = async (path: string) => {
   const str = await readFile(path, 'utf-8')
+  const token = countToken(str)
 
   const ext = path.split('.').pop()
   const name = path.split('/').pop()
+
+  if (token > 600000) {
+    return `${name}.${ext} is cannot provide information because the file size is too large. 
+Please do not request data for this file again.`
+  }
 
   return `
 \`\`\`${ext}:${name}
