@@ -28,7 +28,7 @@ export default octoflare<ActionEvent>(async ({ payload, installation }) => {
   }
 
   if ('commits' in payload) {
-    const { ref, repository, before, commits, after, head_commit } = payload
+    const { ref, repository, commits, head_commit } = payload
 
     if (head_commit?.message.startsWith('chore:')) {
       return new Response('Skip Event: Trivial changes by PR', {
@@ -46,22 +46,10 @@ export default octoflare<ActionEvent>(async ({ payload, installation }) => {
       return await respond({
         repository,
         event: {
-          type: 'push',
-          commits,
-          before,
-          after
-        } as ActionEvent
+          type: 'push'
+        }
       })
     }
-  }
-
-  if ('pull_request' in payload && 'number' in payload) {
-    // return await respond({
-    //   repository: payload.repository,
-    //   event: {
-    //     type: 'pull_request'
-    //   }
-    // })
   }
 
   if ('issue' in payload) {
@@ -73,42 +61,21 @@ export default octoflare<ActionEvent>(async ({ payload, installation }) => {
       })
     }
 
-    if ('comment' in payload && payload.action === 'created') {
-      const { comment, repository } = payload
-
-      if (comment.user.login === 'code-buer[bot]') {
-        return new Response('Skip Event: Comment not created by buer', {
-          status: 200
-        })
-      }
-
-      const {
-        data: { id }
-      } = await installation.kit.rest.issues.createComment({
-        owner: repository.owner.login,
-        repo: repository.name,
-        issue_number: issue.number,
-        body: `@${comment.user.login} Thanks for the comment !
-Please wait while I process it.`
-      })
-
+    if (
+      'changes' in payload &&
+      payload.changes &&
+      'body' in payload.changes &&
+      payload.changes.body?.from
+    ) {
       return await respond({
         repository: payload.repository,
         event: {
-          type: 'issue_comment',
-          issue,
-          comment,
-          prepared_comment_id: id
-        } as ActionEvent
+          type: 'issue',
+          before: payload.changes.body.from,
+          after: issue.body
+        }
       })
     }
-
-    // return await respond({
-    //   repository: payload.repository,
-    //   event: {
-    //     type: 'issue'
-    //   }
-    // })
   }
 
   return new Response('Skip Event: No Trigger Event', {

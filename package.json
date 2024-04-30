@@ -4,7 +4,6 @@
     "build": "npx wrangler deploy --dry-run && npm run build:action",
     "deploy": "npx wrangler deploy",
     "lint": "npx eslint . && tsc",
-    "test": "vitest",
     "format": "npx prettier -w .",
     "build:action": "npx tsx action/scripts/build.ts"
   },
@@ -22,7 +21,6 @@
     "path-minifier": "1.0.18",
     "ts-retry": "4.2.5",
     "typescanner": "0.5.3",
-    "typescript": "5.4.5",
-    "vitest": "1.5.2"
+    "typescript": "5.4.5"
   }
 }
