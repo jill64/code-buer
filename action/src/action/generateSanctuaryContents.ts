@@ -60,7 +60,7 @@ Once a sufficient number of issues have been extracted, output the list in markd
 \`\`\`json
 {
   "type": "summary",
-  "content": "# Detected Project Issues\n## Performance\n- Issue 1\n- Issue 2\n- Issue 3\n..."
+  "content": "# Detected Project Issues\n## Performance\n- [ ] Issue 1\n- [ ] Issue 2\n- [ ] Issue 3\n..."
 }
 \`\`\`
 `
