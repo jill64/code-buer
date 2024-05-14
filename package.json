@@ -15,7 +15,7 @@
     "@jill64/eslint-config-ts": "1.1.21",
     "dotenv": "16.4.5",
     "esbuild": "0.21.2",
-    "js-tiktoken": "1.0.11",
+    "js-tiktoken": "1.0.12",
     "octoflare": "0.24.36",
     "openai": "4.46.1",
     "path-minifier": "1.0.19",
