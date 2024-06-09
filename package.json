@@ -14,7 +14,7 @@
     "@jill64/attempt": "1.1.2",
     "@jill64/eslint-config-ts": "1.1.24",
     "dotenv": "16.4.5",
-    "esbuild": "0.21.4",
+    "esbuild": "0.21.5",
     "js-tiktoken": "1.0.12",
     "octoflare": "0.24.41",
     "openai": "4.49.1",
