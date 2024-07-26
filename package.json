@@ -17,7 +17,7 @@
     "esbuild": "0.23.0",
     "js-tiktoken": "1.0.12",
     "octoflare": "0.25.4",
-    "openai": "4.53.0",
+    "openai": "4.53.1",
     "path-minifier": "1.0.25",
     "ts-retry": "4.2.5",
     "typescanner": "0.5.3",
