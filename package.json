@@ -19,7 +19,7 @@
     "octoflare": "0.25.8",
     "openai": "4.54.0",
     "path-minifier": "1.0.25",
-    "ts-retry": "4.2.5",
+    "ts-retry": "5.0.1",
     "typescanner": "0.5.3",
     "typescript": "5.5.4"
   }
