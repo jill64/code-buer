@@ -16,7 +16,7 @@
     "dotenv": "16.4.5",
     "esbuild": "0.24.0",
     "js-tiktoken": "1.0.15",
-    "octoflare": "0.25.15",
+    "octoflare": "0.25.16",
     "openai": "4.54.0",
     "path-minifier": "1.0.30",
     "ts-retry": "5.0.1",
