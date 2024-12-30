@@ -8,6 +8,12 @@ export const countToken = (messages: string | ChatCompletionContentPart[]) =>
     typeof messages === 'string'
       ? messages
       : messages
-          .map((m) => (m.type === 'text' ? m.text : m.image_url))
+          .map((m) =>
+            m.type === 'text'
+              ? m.text
+              : m.type === 'image_url'
+                ? m.image_url
+                : m.input_audio
+          )
           .join('\n')
   ).length
