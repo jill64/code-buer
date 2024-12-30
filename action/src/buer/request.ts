@@ -20,7 +20,7 @@ export const request = async (
     model
   } = await openai.chat.completions.create({
     messages,
-    model: 'gpt-4-turbo-preview',
+    model: 'o1',
     temperature: 0.2,
     response_format: {
       type: 'json_object'
@@ -32,8 +32,16 @@ export const request = async (
 
   const used_tokens =
     usage?.total_tokens ??
-    messages.reduce((prev, curr) => prev + countToken(curr.content ?? ''), 0) +
-      countToken(message.content ?? '')
+    messages.reduce(
+      (prev, curr) =>
+        prev +
+        countToken(
+          (typeof curr.content === 'string'
+            ? curr.content
+            : curr.content?.join('')) ?? ''
+        ),
+      0
+    ) + countToken(message.content ?? '')
 
   const max_token = 128000
   const remain_tokens = max_token - used_tokens

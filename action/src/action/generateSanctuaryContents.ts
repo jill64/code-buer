@@ -103,7 +103,7 @@ Once a sufficient number of issues have been extracted, output the list in markd
 
   const { content } =
     pickJson(
-      last.content,
+      typeof last.content === 'string' ? last.content : last.content.join(''),
       scanner({
         type: isList(['summary']),
         content: string
