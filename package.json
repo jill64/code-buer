@@ -21,6 +21,6 @@
     "path-minifier": "2.0.0",
     "ts-retry": "5.0.1",
     "typescanner": "0.5.3",
-    "typescript": "5.7.2"
+    "typescript": "5.7.3"
   }
 }
