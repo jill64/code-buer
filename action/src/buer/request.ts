@@ -21,7 +21,6 @@ export const request = async (
   } = await openai.chat.completions.create({
     messages,
     model: 'o1-preview',
-    temperature: 0.2,
     response_format: {
       type: 'json_object'
     },
