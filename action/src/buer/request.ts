@@ -20,7 +20,7 @@ export const request = async (
     model
   } = await openai.chat.completions.create({
     messages,
-    model: 'o1-preview',
+    model: 'o3-mini',
     response_format: {
       type: 'json_object'
     },
@@ -42,7 +42,7 @@ export const request = async (
       0
     ) + countToken(message.content ?? '')
 
-  const max_token = 128000
+  const max_token = 200000
   const remain_tokens = max_token - used_tokens
 
   return {
