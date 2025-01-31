@@ -3,4 +3,3 @@ node_modules
 .env
 .wrangler
 package-lock.json
-pnpm-lock.yaml
