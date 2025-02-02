@@ -21,9 +21,7 @@ export const request = async (
   } = await openai.chat.completions.create({
     messages,
     model: 'o3-mini',
-    response_format: {
-      type: 'json_object'
-    },
+    reasoning_effort: 'high',
     ...options
   })
 
