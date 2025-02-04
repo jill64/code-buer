@@ -27,8 +27,8 @@ importers:
         specifier: 0.24.2
         version: 0.24.2
       js-tiktoken:
-        specifier: 1.0.17
-        version: 1.0.17
+        specifier: 1.0.18
+        version: 1.0.18
       octoflare:
         specifier: 1.2.0
         version: 1.2.0
@@ -797,8 +797,8 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  js-tiktoken@1.0.17:
-    resolution: {integrity: sha512-Fzmf02RUP8lU6eAn0CtwWEr//mSVGOgj6lK6D++OF+ZVVtFVPnaBdSAN1P2QA0/q8IZOulhIOIjnlFy6QwYNBw==}
+  js-tiktoken@1.0.18:
+    resolution: {integrity: sha512-hFYx4xYf6URgcttcGvGuOBJhTxPYZ2R5eIesqCaNRJmYH8sNmsfTeWg4yu//7u1VD/qIUkgKJTpGom9oHXmB4g==}
 
   js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
@@ -1873,7 +1873,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  js-tiktoken@1.0.17:
+  js-tiktoken@1.0.18:
     dependencies:
       base64-js: 1.5.1
 
