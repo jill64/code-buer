@@ -1,5 +1,6 @@
 import { attempt } from '@jill64/attempt'
-import type { Condition } from 'typescanner/dist/types'
+
+type Condition<T> = (value: unknown) => value is T
 
 export const pickJson = <T>(str: string, guard: Condition<T>) => {
   const response = attempt(() => {
