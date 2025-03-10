@@ -13,7 +13,7 @@
         "octoflare": "1.2.0",
         "openai": "4.82.0",
         "path-minifier": "2.0.0",
-        "ts-retry": "5.0.1",
+        "ts-retry": "6.0.0",
         "typescanner": "0.5.3",
         "typescript": "5.7.3",
       },
@@ -424,7 +424,7 @@
 
     "ts-api-utils": ["ts-api-utils@2.0.1", "", { "peerDependencies": { "typescript": ">=4.8.4" } }, "sha512-dnlgjFSVetynI8nzgJ+qF62efpglpWRk8isUEWZGWlJYySCTD6aKvbUDu+zbPeDakk3bg5H4XpitHukgfL1m9w=="],
 
-    "ts-retry": ["ts-retry@5.0.1", "", {}, "sha512-sjIHRgS8eApTkuAXkASMfRSMigeTMmaxvCf4+1V6xGpo0IsuBrssqHRZh6IRgD9f8+7KeFLxNOLvWYy/mw3YBQ=="],
+    "ts-retry": ["ts-retry@6.0.0", "", {}, "sha512-WsVRE/P+VNYbiQC3E6TeIXBRCQj7vzjN4MlXd84AC88K7WwuWShN7A3Q/QSV/yd1hjO8qn2Cevdqny2HMwKUaA=="],
 
     "tunnel": ["tunnel@0.0.6", "", {}, "sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg=="],
 
