@@ -1,11 +1,11 @@
 {
   "type": "module",
   "scripts": {
-    "build": "npx wrangler deploy --dry-run && npm run build:action",
-    "deploy": "npx wrangler deploy",
-    "lint": "npx eslint . && tsc",
+    "build": "bunx wrangler deploy --dry-run && bun run build:action",
+    "deploy": "bunx wrangler deploy",
+    "lint": "eslint . && tsc",
     "format": "npx prettier -w .",
-    "build:action": "npx tsx action/scripts/build.ts"
+    "build:action": "bun build ./action/src/index.ts --outdir ./action/dist --target node"
   },
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
@@ -14,10 +14,10 @@
     "@jill64/attempt": "1.1.4",
     "@jill64/eslint-config-ts": "2.0.5",
     "dotenv": "16.4.7",
-    "esbuild": "0.24.2",
     "js-tiktoken": "1.0.17",
     "octoflare": "1.2.0",
     "openai": "4.82.0",
+    "eslint": "9.22.0",
     "path-minifier": "2.0.0",
     "ts-retry": "5.0.1",
     "typescanner": "0.5.3",
