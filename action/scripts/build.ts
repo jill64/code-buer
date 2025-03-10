@@ -5,5 +5,5 @@ build({
   bundle: true,
   platform: 'node',
   target: 'node20',
-  outfile: 'action/dist/index.cjs'
+  outfile: ''
 })
