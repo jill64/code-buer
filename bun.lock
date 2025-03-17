@@ -10,7 +10,7 @@
         "dotenv": "16.4.7",
         "eslint": "9.22.0",
         "js-tiktoken": "1.0.19",
-        "octoflare": "2.1.4",
+        "octoflare": "2.1.5",
         "openai": "4.82.0",
         "path-minifier": "2.0.0",
         "ts-retry": "6.0.0",
@@ -30,7 +30,7 @@
 
     "@actions/io": ["@actions/io@1.1.3", "", {}, "sha512-wi9JjgKLYS7U/z8PPbco+PvTb/nRWjeoFlJ1Qer83k/3C5PHQi28hiVdeE2kHXmIL99mQFawx8qt/JPjZilJ8Q=="],
 
-    "@cloudflare/workers-types": ["@cloudflare/workers-types@4.20250313.0", "", {}, "sha512-iqyzZwogC+3yL8h58vMhjYQUHUZA8XazE3Q+ofR59wDOnsPe/u9W6+aCl408N0iNBhMPvpJQQ3/lkz0iJN2fhA=="],
+    "@cloudflare/workers-types": ["@cloudflare/workers-types@4.20250317.0", "", {}, "sha512-ud1x5D1ksDIdx35jsx6wG9G8a/SLeg7kfGv/c732umLYn7I+DZ7TdKTvM1LaWTLzp+yYGyXZOrInJywfUU8bVw=="],
 
     "@eslint-community/eslint-utils": ["@eslint-community/eslint-utils@4.4.1", "", { "dependencies": { "eslint-visitor-keys": "^3.4.3" }, "peerDependencies": { "eslint": "^6.0.0 || ^7.0.0 || >=8.0.0" } }, "sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA=="],
 
@@ -344,7 +344,7 @@
 
     "node-fetch": ["node-fetch@2.7.0", "", { "dependencies": { "whatwg-url": "^5.0.0" }, "peerDependencies": { "encoding": "^0.1.0" }, "optionalPeers": ["encoding"] }, "sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A=="],
 
-    "octoflare": ["octoflare@2.1.4", "", { "dependencies": { "@actions/core": "1.11.1", "@actions/github": "6.0.0", "@cloudflare/workers-types": "4.20250313.0", "@octokit/webhooks-types": "7.6.1", "octokit": "4.1.2" } }, "sha512-Dr4+f50xk8nhOoVWFDETvM+ziwWDwmRz3sKaFUvdL2MikAhy2tDDEcBn/x5rsIXriHhD0XBu2nxW9bsilwvVLQ=="],
+    "octoflare": ["octoflare@2.1.5", "", { "dependencies": { "@actions/core": "1.11.1", "@actions/github": "6.0.0", "@cloudflare/workers-types": "4.20250317.0", "@octokit/webhooks-types": "7.6.1", "octokit": "4.1.2" } }, "sha512-0Nlth/gFCUQiB7gX38JQ14wWaPEzl8mYF2N9dWrpmQePGutS3KJxo9ujKaKjXZyL96a5Yk4lkky/MdU/ET2+cw=="],
 
     "octokit": ["octokit@4.1.2", "", { "dependencies": { "@octokit/app": "^15.1.4", "@octokit/core": "^6.1.4", "@octokit/oauth-app": "^7.1.6", "@octokit/plugin-paginate-graphql": "^5.2.4", "@octokit/plugin-paginate-rest": "^11.4.2", "@octokit/plugin-rest-endpoint-methods": "^13.3.1", "@octokit/plugin-retry": "^7.1.4", "@octokit/plugin-throttling": "^9.4.0", "@octokit/request-error": "^6.1.7", "@octokit/types": "^13.7.0" } }, "sha512-0kcTxJOK3yQrJsRb8wKa28hlTze4QOz4sLuUnfXXnhboDhFKgv8LxS86tFwbsafDW9JZ08ByuVAE8kQbYJIZkA=="],
 
