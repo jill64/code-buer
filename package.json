@@ -11,7 +11,7 @@
   "devDependencies": {
     "@actions/exec": "1.1.1",
     "@jill64/prettier-config": "1.0.0",
-    "@jill64/attempt": "1.1.6",
+    "@jill64/attempt": "1.1.7",
     "@jill64/eslint-config-ts": "2.0.20",
     "dotenv": "16.4.7",
     "js-tiktoken": "1.0.19",
