@@ -10,7 +10,7 @@
         "dotenv": "16.5.0",
         "eslint": "9.24.0",
         "js-tiktoken": "1.0.19",
-        "octoflare": "2.1.20",
+        "octoflare": "2.1.21",
         "openai": "4.82.0",
         "path-minifier": "2.0.0",
         "ts-retry": "6.0.0",
@@ -344,7 +344,7 @@
 
     "node-fetch": ["node-fetch@2.7.0", "", { "dependencies": { "whatwg-url": "^5.0.0" }, "peerDependencies": { "encoding": "^0.1.0" }, "optionalPeers": ["encoding"] }, "sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A=="],
 
-    "octoflare": ["octoflare@2.1.20", "", { "dependencies": { "@actions/core": "1.11.1", "@actions/github": "6.0.0", "@cloudflare/workers-types": "4.20250409.0", "@octokit/webhooks-types": "7.6.1", "octokit": "4.1.2" } }, "sha512-k2iA2254Sn/ngde3OnRAeNK+P2tODwynpOnwBYB++K734O5/cfyqvu7vJxJc3XX4rh+vKGLau8Vf3t3tRsXXTg=="],
+    "octoflare": ["octoflare@2.1.21", "", { "dependencies": { "@actions/core": "1.11.1", "@actions/github": "6.0.0", "@cloudflare/workers-types": "4.20250409.0", "@octokit/webhooks-types": "7.6.1", "octokit": "4.1.2" } }, "sha512-3oubh2gMCVVA6O/TCWw+LPZouuJ4+FApEtqVzf4Dx3E7IsLilKRAHps3FEqukESTRvEbTimrJuTpprqMF3dZnA=="],
 
     "octokit": ["octokit@4.1.2", "", { "dependencies": { "@octokit/app": "^15.1.4", "@octokit/core": "^6.1.4", "@octokit/oauth-app": "^7.1.6", "@octokit/plugin-paginate-graphql": "^5.2.4", "@octokit/plugin-paginate-rest": "^11.4.2", "@octokit/plugin-rest-endpoint-methods": "^13.3.1", "@octokit/plugin-retry": "^7.1.4", "@octokit/plugin-throttling": "^9.4.0", "@octokit/request-error": "^6.1.7", "@octokit/types": "^13.7.0" } }, "sha512-0kcTxJOK3yQrJsRb8wKa28hlTze4QOz4sLuUnfXXnhboDhFKgv8LxS86tFwbsafDW9JZ08ByuVAE8kQbYJIZkA=="],
 
