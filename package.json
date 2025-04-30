@@ -15,7 +15,7 @@
     "@jill64/eslint-config-ts": "2.0.30",
     "dotenv": "16.5.0",
     "js-tiktoken": "1.0.20",
-    "octoflare": "2.1.21",
+    "octoflare": "2.1.22",
     "openai": "4.82.0",
     "eslint": "9.25.1",
     "path-minifier": "2.0.0",
