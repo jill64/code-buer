@@ -17,7 +17,7 @@
     "js-tiktoken": "1.0.20",
     "octoflare": "2.1.22",
     "openai": "4.82.0",
-    "eslint": "9.25.1",
+    "eslint": "9.26.0",
     "path-minifier": "2.0.0",
     "ts-retry": "6.0.0",
     "typescanner": "0.5.3",
