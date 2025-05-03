@@ -12,7 +12,7 @@
     "@actions/exec": "1.1.1",
     "@jill64/prettier-config": "1.0.0",
     "@jill64/attempt": "1.1.10",
-    "@jill64/eslint-config-ts": "2.0.30",
+    "@jill64/eslint-config-ts": "2.0.31",
     "dotenv": "16.5.0",
     "js-tiktoken": "1.0.20",
     "octoflare": "2.1.22",
