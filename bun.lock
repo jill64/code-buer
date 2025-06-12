@@ -4,7 +4,7 @@
     "": {
       "devDependencies": {
         "@actions/exec": "1.1.1",
-        "@jill64/attempt": "1.1.10",
+        "@jill64/attempt": "1.1.11",
         "@jill64/eslint-config-ts": "2.0.35",
         "@jill64/prettier-config": "1.0.0",
         "dotenv": "16.5.0",
@@ -60,7 +60,7 @@
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.2", "", {}, "sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ=="],
 
-    "@jill64/attempt": ["@jill64/attempt@1.1.10", "", {}, "sha512-7IWGzE3NlKLhYFwVS5syFp9gaTQ8nZRV3RfVkTAUAgBo6q4IzU01TXPXW0ZmhqLbsCkdR+mkczre8vjlDo/XcA=="],
+    "@jill64/attempt": ["@jill64/attempt@1.1.11", "", {}, "sha512-eqQx8hmF9wAHp/i2csYcReqXnzEFf5QPrtILEczhK2Yvsl8nXNA9s2lPdoO1sj93+PD6/mGsiJcD70T4u64Y6g=="],
 
     "@jill64/eslint-config-ts": ["@jill64/eslint-config-ts@2.0.35", "", { "dependencies": { "@eslint/js": "9.28.0", "@types/eslint": "9.6.1", "@types/eslint-config-prettier": "6.11.3", "@typescript-eslint/eslint-plugin": "8.30.1", "@typescript-eslint/parser": "8.30.1", "eslint": "9.28.0", "eslint-config-prettier": "10.1.5" } }, "sha512-eC0TZTxpe9+ZQTdWWgRJ00bRZt2/agx1bMZflrbZ4wIDenk0rub9/5a9dsuyKqNN9Ezt7xHhOx+NZ8J59JqAaQ=="],
 
